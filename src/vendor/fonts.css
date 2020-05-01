@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Gotham Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/GothamPro.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Gotham Pro";
+  font-style: bold;
+  font-weight: 900;
+  src: url("./fonts/GothamPro-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/roboto-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Museo Sans Cyrl";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/MuseoSansCyrl-500.woff") format("woff");
+}
