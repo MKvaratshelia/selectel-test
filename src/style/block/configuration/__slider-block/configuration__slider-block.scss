@@ -1,0 +1,15 @@
+.configuration__slider-block {
+  width: 246px;
+  height: 100%;
+  position: relative;
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .configuration__slider-block {
+    width: 204px;
+    margin-left: 15px;
+  }
+}

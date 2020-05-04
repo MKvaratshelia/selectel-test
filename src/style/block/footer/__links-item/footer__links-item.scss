@@ -1,0 +1,22 @@
+.footer__links-item {
+  @include museo-normal;
+  color: $gray;
+  font-size: 14px;
+  line-height: 120%;
+  display: flex;
+  align-items: flex-start;
+  height: 26px;
+}
+
+@media screen and (max-width: 1060px) {
+  .footer__links-item {
+    font-size: 12px;
+    height: 24px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer__links-item {
+    height: 16px;
+  }
+}

@@ -1,0 +1,35 @@
+$bg-color: #2f93fe;
+$font-color: #fff;
+$bg-hover: #71b6ff;
+$bg-active: #0971f5;
+
+.promo__button {
+  width: 160px;
+  height: 32px;
+  color: $font-color;
+  background-color: $bg-color;
+  @include museo-normal;
+  font-size: 14px;
+  line-height: 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+@media screen and (max-width: 767px) {
+  .promo__button {
+    width: 111px;
+    height: 31px;
+    font-size: 10px;
+    line-height: 24px;
+  }
+}
+
+.promo__button:hover {
+  background-color: $bg-hover;
+}
+
+.promo__button:active {
+  background-color: $bg-active;
+}

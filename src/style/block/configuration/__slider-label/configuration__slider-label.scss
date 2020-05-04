@@ -1,0 +1,13 @@
+.configuration__slider-label {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 120%;
+  @include gotham-normal;
+  color: $black;
+}
+
+@media screen and (max-width: 767px) {
+  .configuration__slider-label {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,14 @@
+.configuration__checkbox-container {
+  margin-left: 90px;
+  width: 480px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 767px) {
+  .configuration__checkbox-container {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+  }
+}

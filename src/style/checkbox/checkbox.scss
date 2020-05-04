@@ -1,0 +1,36 @@
+.configuration__checkbox {
+  display: none;
+}
+
+.configuration__checkbox-fake {
+  position: relative;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #29435d;
+  border-radius: 50%;
+  transition: 0.2s;
+  margin-right: 10px;
+}
+
+.configuration__checkbox-fake::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  background-image: url("../../images/check.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 3px;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.configuration__checkbox:checked + .configuration__checkbox-fake {
+  border: 1px solid #0971f5;
+}
+
+.configuration__checkbox:checked + .configuration__checkbox-fake::before {
+  opacity: 1;
+}

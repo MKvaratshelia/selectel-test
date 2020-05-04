@@ -1,0 +1,11 @@
+.configuration__slider-container {
+  display: flex;
+  align-items: center;
+  height: 38px;
+}
+
+@media screen and (max-width: 767px) {
+  .configuration__slider-container {
+    margin-bottom: 29px;
+  }
+}

@@ -1,0 +1,21 @@
+@import "../header/__navigation/header__navigation.scss";
+@import "../header/__list/header__list.scss";
+@import "../header/__logo/header__logo.scss";
+@import "../header/__icon-value/header__icon-value.scss";
+@import "../header/__list-item/hader__list-item.scss";
+@import "../header/__link/header__link.scss";
+@import "../header/__nav-icon/header__nav-icon.scss";
+
+.header {
+  height: 56px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    height: 32px;
+  }
+}

@@ -1,0 +1,14 @@
+.configuration__performance-line {
+  @include gotham-normal;
+  color: $black;
+  font-size: 18px;
+  line-height: 120%;
+  margin-bottom: 24px;
+  margin-top: 0px;
+}
+
+@media screen and (max-width: 1060px) {
+  .configuration__performance-line {
+    margin-bottom: 16px;
+  }
+}

@@ -1,0 +1,10 @@
+.configuration__core-value {
+  position: absolute;
+  top: 30px;
+  transform: translateX(-50%);
+  left: 50%;
+  font-size: 14px;
+  line-height: 120%;
+  color: $black;
+  @include gotham-normal;
+}

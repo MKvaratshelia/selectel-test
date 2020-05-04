@@ -1,0 +1,22 @@
+.card__order {
+  display: flex;
+  flex-direction: column;
+  width: 128px;
+  text-align: center;
+  margin-left: 244px;
+}
+
+@media screen and (max-width: 1060px) {
+  .card__order {
+    margin-left: 184px;
+    width: 103px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card__order {
+    margin: 0;
+    width: 100%;
+    text-align: left;
+  }
+}

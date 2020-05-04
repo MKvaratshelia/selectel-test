@@ -1,0 +1,27 @@
+@mixin roboto-normal {
+  font: {
+    family: Roboto, Arial, Helvetica, sans-serif;
+    weight: normal;
+  }
+}
+
+@mixin gotham-bold {
+  font: {
+    family: Gotham Pro, Arial, Helvetica, sans-serif;
+    weight: bold;
+  }
+}
+
+@mixin gotham-normal {
+  font: {
+    family: Gotham Pro, Arial, Helvetica, sans-serif;
+    weight: normal;
+  }
+}
+
+@mixin museo-normal {
+  font: {
+    family: Museo Sans Cyrl, Arial, Helvetica, sans-serif;
+    weight: normal;
+  }
+}

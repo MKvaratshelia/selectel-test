@@ -1,0 +1,15 @@
+.footer__social-icons {
+  width: 112px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 767px) {
+  .footer__social-icons {
+    flex-direction: column;
+    width: 42px;
+    height: 42px;
+    flex-wrap: wrap;
+  }
+}

@@ -18,6 +18,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.pug$/,
+        use: ["pug-loader"],
+      },
+      {
         // тут описываются правила
         test: /\.js$/, // регулярное выражение, которое ищет все js файлы
         use: { loader: "babel-loader" }, // весь JS обрабатывается пакетом babel-loader
@@ -58,6 +62,11 @@ module.exports = {
     ],
   },
   plugins: [
+    require("autoprefixer"),
+    require("cssnano")({
+      // подключили cssnano
+      preset: "default", // выбрали настройки по умолчанию
+    }),
     new MiniCssExtractPlugin({
       filename: "style.[contenthash].css",
     }),
@@ -70,11 +79,16 @@ module.exports = {
       canPrint: true,
     }),
     new HtmlWebpackPlugin({
-      // Означает, что:
-      inject: false, // стили НЕ нужно прописывать внутри тегов
-      template: "./src/index.html", // откуда брать образец для сравнения с текущим видом проекта
-      filename: "index.html", // имя выходного файла, то есть того, что окажется в папке dist после сборки
+      template: "./src/index.pug",
     }),
+
+    // new HtmlWebpackPlugin({
+    //   // Означает, что:
+    //   inject: false, // стили НЕ нужно прописывать внутри тегов
+    //   template: "./src/index.html", // откуда брать образец для сравнения с текущим видом проекта
+    //   // template: "./src/index.pug", // откуда брать образец для сравнения с текущим видом проекта
+    //   filename: "index.html", // имя выходного файла, то есть того, что окажется в папке dist после сборки
+    // }),
     new WebpackMd5Hash(),
     new webpack.DefinePlugin({
       NODE_ENV: JSON.stringify(process.env.NODE_ENV),

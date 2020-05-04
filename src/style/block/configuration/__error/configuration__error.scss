@@ -1,0 +1,10 @@
+@import "./_show/configuration__error_show.scss";
+
+.configuration__error {
+  @include gotham-normal;
+  color: $gray;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  display: none;
+}

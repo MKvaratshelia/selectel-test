@@ -1,0 +1,13 @@
+.configuration__form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+@media screen and (max-width: 767px) {
+  .configuration__form {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0px;
+  }
+}

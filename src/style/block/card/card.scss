@@ -1,0 +1,43 @@
+@import "./__container/card__container.scss";
+@import "./__CPU/card__CPU.scss";
+@import "./__order/card__order.scss";
+@import "./__model/card__model.scss";
+@import "./__description/card__description.scss";
+@import "./__button/card__button.scss";
+@import "./__price/card__price.scss";
+@import "./__RAM/card__RAM.scss";
+@import "./__storage-device/card__storage-device.scss";
+
+.card {
+  height: 138px;
+  background: #ffffff;
+  border: 1px solid #8391b2;
+  box-sizing: border-box;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 1060px) {
+  .card {
+    height: 152px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card {
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .card {
+    height: 152px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card {
+    height: 234px;
+  }
+}

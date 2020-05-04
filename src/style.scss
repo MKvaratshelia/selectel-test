@@ -1,2 +1,30 @@
 @import "./vendor/normalize.css";
 @import "./vendor/fonts.css";
+@import "./style/mixins/font-family.scss";
+@import "./style/font-colors/font-colors.scss";
+@import "./style/block/page/page.scss";
+@import "./style/block/header/header.scss";
+@import "./style/block/link/link.scss";
+@import "./style/block/promo/promo.scss";
+@import "./style/block/configuration/configuration.scss";
+@import "./style/block/card/card.scss";
+@import "./style/block/footer/footer.scss";
+
+.body {
+  width: 1200px;
+  margin: auto;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+@media screen and(max-width: 1060px) {
+  .body {
+    width: 768px;
+  }
+}
+
+@media screen and(max-width: 767px) {
+  .body {
+    width: 320px;
+  }
+}

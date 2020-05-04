@@ -1,0 +1,7 @@
+.card__model {
+  @include gotham-bold;
+  font-size: 14px;
+  line-height: 120%;
+  color: $black;
+  margin: 0 0 15px;
+}

@@ -1,0 +1,21 @@
+.card__RAM {
+  margin-left: 58px;
+  width: 128px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1060px) {
+  .card__RAM {
+    width: 100px;
+    margin-left: 15px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card__RAM {
+    width: 100px;
+    margin-left: 0px;
+    text-align: left;
+    margin-bottom: 16px;
+  }
+}

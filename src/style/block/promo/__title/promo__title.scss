@@ -1,0 +1,25 @@
+.promo__title {
+  @include gotham-bold;
+  font-size: 32px;
+  line-height: 120%;
+  color: $black;
+  max-width: 528px;
+  margin-bottom: 16px;
+}
+
+@media screen and (max-width: 1060px) {
+  .promo__title {
+    max-width: 412px;
+    font-size: 26px;
+    line-height: 120%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .promo__title {
+    max-width: 100%;
+    font-size: 18px;
+    line-height: 120%;
+    margin-top: 0px;
+  }
+}

@@ -1,0 +1,13 @@
+@import "./__promo/page__promo.scss";
+@import "./__configuration/page__configuration.scss";
+
+.page {
+  max-width: calc(900 / 1200 * 100%);
+  margin: 0 auto 0;
+}
+
+@media screen and (max-width: 1060px) {
+  .page {
+    max-width: calc(708 / 768 * 100%);
+  }
+}

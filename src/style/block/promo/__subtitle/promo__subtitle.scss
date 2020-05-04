@@ -1,0 +1,21 @@
+.promo__subtitle {
+  max-width: 528px;
+  @include gotham-normal;
+  font-size: 18px;
+  line-height: 120%;
+  margin-bottom: 24px;
+}
+
+@media screen and (max-width: 1060px) {
+  .promo__subtitle {
+    max-width: 413px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .promo__subtitle {
+    max-width: 100%;
+    font-size: 12px;
+  }
+}
