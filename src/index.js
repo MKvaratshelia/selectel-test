@@ -29,7 +29,7 @@ slider.addEventListener("input", (e) => {
 });
 
 // меняет значение background в слайдере
-slider.addEventListener("mousemove", () => {
+slider.addEventListener("input", () => {
   let x = slider.value;
 
   if (x == 2) {

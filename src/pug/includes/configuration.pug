@@ -5,6 +5,8 @@ section(class="page__configuration configuration")
             span(class="configuration__slider-label") vCPU
             div(class="configuration__slider-block")
               input(type="range", name="range" class="configuration__slider" min="2" max="12" step="2" value="6")
+              span(class="configuration__slider-value-start") 2
+              span(class="configuration__slider-value-end") 12
               span(class="configuration__core-value") 6 ядер
           div(class="configuration__checkbox-container")    
             label(for="GPU" class="configuration__checkbox-label")
@@ -27,18 +29,18 @@ section(class="page__configuration configuration")
           i
             img(src="./images/loader.svg", alt="изображение загрузки")
         div(class="configuration__card-list")
-          //- div(class="configuration__card card")
-          //-   div(class="card__description")
-          //-     h4(class="card__model") D4
-          //-     div(class="card__container")
-          //-       div(class="card__CPU")
-          //-         span 2 x intel xeon
-          //-         span E-2236
-          //-         span 3.44 ГГц. 6 ядер
-          //-       span(class="card__RAM") 32gb
-          //-       span(class="card__storage-device") 460gb ssd
-          //-       div(class="card__order")
-          //-         span(class="card__price") 16 000 ₽/месяц
-          //-         form(action="https://selectel.ru/" target="_blank")
-          //-           button(class="card__button") Заказать
+          div(class="configuration__card card")
+            div(class="card__description")
+              h4(class="card__model") D4
+              div(class="card__container")
+                div(class="card__CPU")
+                  span 2 x intel xeon
+                  span E-2236
+                  span 3.44 ГГц. 6 ядер
+                span(class="card__RAM") 32gb
+                span(class="card__storage-device") 460gb ssd
+                div(class="card__order")
+                  span(class="card__price") 16 000 ₽/месяц
+                  form(action="https://selectel.ru/" target="_blank")
+                    button(class="card__button") Заказать
           

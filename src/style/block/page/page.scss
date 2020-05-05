@@ -2,12 +2,12 @@
 @import "./__configuration/page__configuration.scss";
 
 .page {
-  max-width: calc(900 / 1200 * 100%);
-  margin: 0 auto 0;
+  width: calc(900 / 1200 * 100%);
+  margin: auto;
 }
 
 @media screen and (max-width: 1060px) {
   .page {
-    max-width: calc(708 / 768 * 100%);
+    width: 92%;
   }
 }
