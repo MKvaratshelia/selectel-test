@@ -13,39 +13,108 @@ import "./images/server.svg";
 import "./images/server-320.svg";
 import "./images/loader.svg";
 
+import preloader from "./js/utils/utils";
+import createServer from "./js/components/createServer";
+import createSlider from "./js/components/createSlider";
+import api from "./js/components/api";
+
+const loader = document.querySelector(".configuration__loader");
+const error = document.querySelector(".configuration__error");
+const nothingFound = document.querySelector(".configuration__nothing-found");
+const form = document.querySelector(".configuration__form");
 const sliderValue = document.querySelector(".configuration__core-value");
 const slider = document.querySelector(".configuration__slider");
+const gpu = form.elements.GPU;
+const raid = form.elements.RAID;
+const ssd = form.elements.SSD;
+const serverList = document.querySelector(".configuration__card-list");
+const url = "https://api.jsonbin.io/b/5df3c10a2c714135cda0bf0f/1";
+const apiServer = api(url);
 
-// добавляет занчение слайдера
 slider.addEventListener("input", (e) => {
-  let slider = e.target.value;
-  let core = "";
-  if (slider <= 4) {
-    core = "ядра";
-  } else {
-    core = "ядер";
-  }
-  sliderValue.textContent = `${slider} ${core}`;
+  createSlider(sliderValue, e);
 });
 
-// меняет значение background в слайдере
-slider.addEventListener("input", () => {
-  let x = slider.value;
+function start(core, api) {
+  api
+    .then((res) => {
+      error.classList.remove("configuration__error_show");
+      preloader(true, loader);
+      const data = res.filter((data) => {
+        return data.cpu.cores * data.cpu.count == core;
+      });
+      for (let el of data) {
+        createServer(el, serverList);
+      }
+    })
+    .catch(() => error.classList.add("configuration__error_show"))
+    .finally(() => preloader(false, loader));
+}
 
-  if (x == 2) {
-    x = 0;
-  } else if (x == 4) {
-    x = 20;
-  } else if (x == 6) {
-    x = 40;
-  } else if (x == 8) {
-    x = 60;
-  } else if (x == 10) {
-    x = 80;
-  } else if (x == 12) {
-    x = 100;
-  }
-
-  let color = "linear-gradient(90deg, #2f93fe " + x + "%, #e5e5e5 " + x + "%)";
-  slider.style.background = color;
+slider.addEventListener("input", (e) => {
+  createSlider(sliderValue, e);
 });
+
+start(slider.value, apiServer);
+// function get(core, disk, gpu) {
+//   nothingFound.classList.remove("configuration__nothing-found_show");
+//   while (serverList.firstChild) {
+//     serverList.removeChild(serverList.firstChild);
+//   }
+//   apiServer
+//     .then((res) => {
+//       preloader(true, loader);
+//       console.log(res);
+//       const data = res.filter((data) => {
+//         return (
+//           // (data.disk.type == disk && data.cpu.cores * data.cpu.count == core) ||
+//           // (data.disk.type == disk &&
+//           //   data.cpu.cores * data.cpu.count == core &&
+//           //   data.gpu == true) ||
+//           data.cpu.cores * data.cpu.count == core ||
+//           (data.cpu.cores * data.cpu.count == core && data.disk.type == disk)
+//         );
+//       });
+//       console.log(data);
+//       if (data.length == 0) {
+//         nothingFound.classList.add("configuration__nothing-found_show");
+//       }
+//       for (let el of data) {
+//         createServer(el, serverList);
+//       }
+//     })
+//     .finally(() => {
+//       preloader(false, loader);
+//     });
+// }
+
+// form.addEventListener("change", () => {
+//   get(slider.value, ssd.value, gpu.value);
+// });
+
+// function result() {
+//   error.classList.remove("configuration__error_show");
+//   preloader(true, loader);
+//   apiServer
+//     .then((res) => {
+//       console.log(res);
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//       error.classList.add("configuration__error_show");
+//     })
+//     .finally(() => preloader(false, loader));
+// }
+// result();
+
+// form.addEventListener("change", (e) => {
+//   console.log(slider.value);
+// });
+// api.then((res) => {
+//   const result = res;
+//   console.log(res);
+//   const arr = [];
+//   console.log(arr);
+//   result.forEach((element) => {
+//     arr.push(element);
+//   });

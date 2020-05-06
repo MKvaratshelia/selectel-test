@@ -1,0 +1,9 @@
+@import "./_show/configuration__nothing-found_show.scss";
+.configuration__nothing-found {
+  @include gotham-normal;
+  color: $gray;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  display: none;
+}

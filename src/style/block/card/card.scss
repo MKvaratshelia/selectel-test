@@ -17,11 +17,13 @@
   border-radius: 7px;
   display: flex;
   align-items: center;
+  margin-bottom: 12px;
 }
 
 @media screen and (max-width: 1060px) {
   .card {
     height: 152px;
+    margin-bottom: 16px;
   }
 }
 

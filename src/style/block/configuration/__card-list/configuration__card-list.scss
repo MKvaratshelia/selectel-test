@@ -5,12 +5,12 @@
   // grid-gap: 12px;
   // grid-template-rows: 1fr;
   display: flex;
-  margin-bottom: 12px;
   width: 100%;
+  flex-direction: column;
 }
 
-@media screen and (max-width: 1060px) {
-  .configuration__card-list {
-    margin-bottom: 16px;
-  }
-}
+// @media screen and (max-width: 1060px) {
+//   .configuration__card-list {
+//     margin-bottom: 16px;
+//   }
+// }
