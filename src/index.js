@@ -34,7 +34,6 @@ const apiServer = api(url);
 slider.addEventListener("input", (e) => {
   createSlider(sliderValue, e);
 });
-
 function start(core, api) {
   api
     .then((res) => {
@@ -56,65 +55,34 @@ slider.addEventListener("input", (e) => {
 });
 
 start(slider.value, apiServer);
-// function get(core, disk, gpu) {
-//   nothingFound.classList.remove("configuration__nothing-found_show");
-//   while (serverList.firstChild) {
-//     serverList.removeChild(serverList.firstChild);
-//   }
-//   apiServer
-//     .then((res) => {
-//       preloader(true, loader);
-//       console.log(res);
-//       const data = res.filter((data) => {
-//         return (
-//           // (data.disk.type == disk && data.cpu.cores * data.cpu.count == core) ||
-//           // (data.disk.type == disk &&
-//           //   data.cpu.cores * data.cpu.count == core &&
-//           //   data.gpu == true) ||
-//           data.cpu.cores * data.cpu.count == core ||
-//           (data.cpu.cores * data.cpu.count == core && data.disk.type == disk)
-//         );
-//       });
-//       console.log(data);
-//       if (data.length == 0) {
-//         nothingFound.classList.add("configuration__nothing-found_show");
-//       }
-//       for (let el of data) {
-//         createServer(el, serverList);
-//       }
-//     })
-//     .finally(() => {
-//       preloader(false, loader);
-//     });
-// }
 
-// form.addEventListener("change", () => {
-//   get(slider.value, ssd.value, gpu.value);
-// });
+function filter(core, diskType, gpuValue, raid) {
+  nothingFound.classList.remove("configuration__nothing-found_show");
+  while (serverList.firstChild) {
+    serverList.removeChild(serverList.firstChild);
+  }
 
-// function result() {
-//   error.classList.remove("configuration__error_show");
-//   preloader(true, loader);
-//   apiServer
-//     .then((res) => {
-//       console.log(res);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       error.classList.add("configuration__error_show");
-//     })
-//     .finally(() => preloader(false, loader));
-// }
-// result();
+  apiServer
+    .then((res) => {
+      console.log(res);
+      preloader(true, loader);
 
-// form.addEventListener("change", (e) => {
-//   console.log(slider.value);
-// });
-// api.then((res) => {
-//   const result = res;
-//   console.log(res);
-//   const arr = [];
-//   console.log(arr);
-//   result.forEach((element) => {
-//     arr.push(element);
-//   });
+      const result = res.filter(({ cpu, disk, gpu }) => {
+        return cpu.cores * cpu.count == core.value;
+      });
+      console.log(result);
+      if (result.length == 0) {
+        nothingFound.classList.add("configuration__nothing-found_show");
+      }
+      for (let el of result) {
+        createServer(el, serverList);
+      }
+    })
+    .finally(() => {
+      preloader(false, loader);
+    });
+}
+
+form.addEventListener("change", () => {
+  filter(slider, ssd, gpu, raid);
+});

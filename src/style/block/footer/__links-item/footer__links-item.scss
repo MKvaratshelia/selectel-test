@@ -1,4 +1,5 @@
 .footer__links-item {
+  width: 128px;
   @include museo-normal;
   color: $gray;
   font-size: 14px;
@@ -10,6 +11,7 @@
 
 @media screen and (max-width: 1060px) {
   .footer__links-item {
+    width: 90px;
     font-size: 12px;
     height: 24px;
   }
@@ -20,3 +22,9 @@
     height: 16px;
   }
 }
+
+// @media screen and (max-width: 1060px) {
+//   .footer__links-item {
+//     width: 117px;
+//   }
+// }
