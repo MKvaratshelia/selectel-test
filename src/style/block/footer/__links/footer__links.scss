@@ -47,13 +47,7 @@
 @media screen and (max-width: 767px) {
   .footer__links {
     flex-direction: row;
-
     height: 97px;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .footer__links {
     max-width: 198px;
   }
 }
