@@ -31,9 +31,6 @@ const serverList = document.querySelector(".configuration__card-list");
 const url = "https://api.jsonbin.io/b/5df3c10a2c714135cda0bf0f/1";
 const apiServer = api(url);
 
-slider.addEventListener("input", (e) => {
-  createSlider(sliderValue, e);
-});
 function start(core, api) {
   api
     .then((res) => {
@@ -83,6 +80,9 @@ function filter(core, diskType, gpuValue, raid) {
     });
 }
 
+slider.addEventListener("input", (e) => {
+  createSlider(sliderValue, e);
+});
 form.addEventListener("change", () => {
   filter(slider, ssd, gpu, raid);
 });

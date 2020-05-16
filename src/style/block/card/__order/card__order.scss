@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 128px;
-  text-align: center;
+  align-items: center;
   margin-left: 244px;
 }
 
@@ -17,6 +17,6 @@
   .card__order {
     margin: 0;
     width: 100%;
-    text-align: left;
+    align-items: flex-start;
   }
 }

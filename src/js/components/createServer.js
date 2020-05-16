@@ -33,8 +33,8 @@ export default function createServer(data, container) {
       ><span class="card__storage-device">${diskType}</span>
       <div class="card__order">
         <span class="card__price">${data.price / 100} ₽/месяц</span
-        ><a href="https://selectel.ru/" target="_blank"
-          ><button class="card__button">Заказать</button></a
+        ><a class="card__button" href="https://selectel.ru/" target="_blank"
+          >Заказать</a
         >
       </div>
     </div>

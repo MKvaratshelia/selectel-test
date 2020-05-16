@@ -1,4 +1,8 @@
 .card__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
   width: 76px;
   height: 24px;
   border: 1px solid #2f93fe;
