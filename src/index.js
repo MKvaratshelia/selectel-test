@@ -32,10 +32,11 @@ const url = "https://api.jsonbin.io/b/5df3c10a2c714135cda0bf0f/1";
 const apiServer = api(url);
 
 function start(core, api) {
+  preloader(true, loader);
   api
     .then((res) => {
       error.classList.remove("configuration__error_show");
-      preloader(true, loader);
+      // preloader(true, loader);
       const data = res.filter((data) => {
         return data.cpu.cores * data.cpu.count == core;
       });
@@ -61,10 +62,14 @@ function filter(core, diskType, gpuValue, raid) {
 
   apiServer
     .then((res) => {
-      console.log(res);
       preloader(true, loader);
-
       const result = res.filter(({ cpu, disk, gpu }) => {
+        if (diskType.checked) {
+          return (
+            cpu.cores * cpu.count == core.value && disk.type == diskType.value
+          );
+        }
+
         return cpu.cores * cpu.count == core.value;
       });
       console.log(result);
